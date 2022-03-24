@@ -2,13 +2,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../../../store'
 
 interface MovieState {
-  movies: [],
+	movies: [],
 	page: number,
 	hasMoreMovies: boolean
 }
 
 const initialState: MovieState = {
-  movies: [],
+	movies: [],
 	page: 1,
 	hasMoreMovies: true
 }

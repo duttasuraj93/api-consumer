@@ -8,7 +8,8 @@
     min-height: inherit;
     width: 100%;
     object-fit: cover;
-    filter: brightness(0.3);
+    -webkit-filter: brightness(0.3);
+            filter: brightness(0.3);
 }
 
 .movie__details {

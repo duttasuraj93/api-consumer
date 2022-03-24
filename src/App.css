@@ -57,7 +57,7 @@ button {
 .button-primary {
   border: none;
   text-decoration: none;
-  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
   padding: 5px 10px;
   border-radius: var(--border-radius);
   color: #ffffff;
@@ -138,10 +138,12 @@ a {
 }
 @keyframes spin {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -186,7 +188,6 @@ a {
   padding-left: 20px;
   padding-right: 20px;
 }
-
 
 /* Header */
 .header {
