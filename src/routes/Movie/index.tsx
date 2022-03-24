@@ -86,15 +86,6 @@ export default function Movie() {
                   <img className='movie_image' src='https://wipfilms.net/wp-content/uploads/2016/05/No_Poster-1.JPEG' alt="" />
               }
             </div>
-
-            <div className='movie_image__container--resp pos-abs'>
-              {
-                movie[0].backdrop_path ?
-                  <img className='movie_image__resp' src={`https://image.tmdb.org/t/p/w500/${movie[0].backdrop_path}`} alt="" />
-                  :
-                  <img className='movie_image__resp' src='https://wipfilms.net/wp-content/uploads/2016/05/No_Poster-1.JPEG' alt="" />
-              }
-            </div>
             <div className='movie__details__container'>
               <h1 className='movie__heading' data-testid='movie-title'>{movie[0].title && movie[0].title}</h1>
               <p className='movie__desc mar-bot-10'>{movie[0].overview && movie[0].overview}</p>
@@ -109,7 +100,7 @@ export default function Movie() {
                   item.name && <span key={item.iso_639_1}>{(index ? ', ' : '') + item.name}</span>
                 ))}
               </div>
-              <div className='mar-bot-10'>
+              <div className='movie__runtime mar-bot-10'>
                 <span className='mar-right-10'>Runtime: {movie[0].runtime >= 0 ? movie[0].runtime + 'min' : 'NA'}</span>
               </div>
               <div className='mar-bot-10'>

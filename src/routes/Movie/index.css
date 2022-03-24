@@ -1,11 +1,3 @@
-.movie_image__container--resp {
-    display: none;
-}
-
-.movie__details__container {
-    z-index: 1;
-}
-
 .movie__container {
     min-height: 400px;
     position: relative;
@@ -50,16 +42,6 @@
 @media only screen and (max-width: 768px) {
     .movie__details--wrapper {
         flex-direction: column;
-    }
-
-    .movie_image__container {
-        display: none;
-    }
-
-    .movie_image__container--resp {
-        display: block;
-        filter: brightness(0.3);
-        width: 100%;
     }
 
     .movie_image__resp {
