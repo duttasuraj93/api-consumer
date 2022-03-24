@@ -28,6 +28,7 @@ export default function Movies() {
         setLoading(false);
         setMovieFetchError(false);
       }).catch(err => {
+        setLoading(false);
         setMovieFetchError(true);
         console.log('Movie fetch error: ' + err);
       })
