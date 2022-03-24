@@ -1,25 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
+import { lazy, Suspense } from 'react';
 import './App.css';
+import './index.css';
+import Loading from './components/Loading';
+import { useAppSelector } from './hooks'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Header from './components/Header/index';
+
+const Home = lazy(() => import('./routes/Home/index'));
+const Movie = lazy(() => import('./routes/Movie/index'));
+const Movies = lazy(() => import('./routes/Movies/index'));
+
 
 function App() {
+
+  const theme = useAppSelector(state => state.theme);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className='App' data-theme={theme}>
+        <Router>
+          <Header />
+          <Suspense fallback={<div className='flex-row justify-cont-center ver-pad-60'>
+            <div className='default-wrapper pad-hor-20'>
+              <div>
+                <div className='flex-row justify-cont-space-bet flex-wrap'>
+                  <Loading />
+                </div>
+              </div>
+            </div>
+          </div>}>
+            <Routes>
+              <Route path="/" element={<Movies />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/movies" element={<Movies />} />
+              <Route path="/movie/:id" element={<Movie />} />
+            </Routes>
+          </Suspense>
+        </Router>
+      </div>
+    </>
   );
 }
 
