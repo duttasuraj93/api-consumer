@@ -25,9 +25,9 @@ export default function EachMovie({ movie }: Props) {
     <div data-testid={`movie-item-${movie.id}`} onClick={goToMovie} className='movie__wrapper cursor-pointer'>
       {
         movie.poster_path ?
-          <img className='poster width-100 height-100' src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
+          <img className='poster width-100 height-100' loading="lazy" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" />
           :
-          <img className='poster width-100 height-100' src='https://wipfilms.net/wp-content/uploads/2016/05/No_Poster-1.JPEG' alt="" />
+          <img className='poster width-100 height-100' loading="lazy" src='https://wipfilms.net/wp-content/uploads/2016/05/No_Poster-1.JPEG' alt="" />
       }
       <h4 className='movie__title'>{movie.title && movie.title}</h4>
     </div>
