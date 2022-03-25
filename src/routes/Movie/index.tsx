@@ -26,7 +26,7 @@ export default function Movie() {
   let { id } = useParams();
 
   async function getMovieDetails() {
-    await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_MOVIE_API}&language=en-US`,)
+    await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=348dcf1948c61f6be83ca1d5a90f3ffe&language=en-US`,)
       .then(res => res.json())
       .then(res => {
         setMovie([res]);

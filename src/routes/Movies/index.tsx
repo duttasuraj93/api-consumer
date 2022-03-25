@@ -19,7 +19,7 @@ export default function Movies() {
   const [movieFetchError, setMovieFetchError] = useState(false);
 
   function getMovies() {
-    fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_MOVIE_API}&language=en-US&page=${reduxMoviePage}`,)
+    fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=348dcf1948c61f6be83ca1d5a90f3ffe&language=en-US&page=${reduxMoviePage}`,)
       .then(res => res.json())
       .then(res => {
         dispatch(addMovies(res.results))
