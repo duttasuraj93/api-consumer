@@ -7,13 +7,6 @@ import { BrowserRouter } from 'react-router-dom';
 
 describe("Handle movies tests", () => {
 
-  it("should render atleast one movie", async () => {
-    render(<Provider store={store}><BrowserRouter><Movies /></BrowserRouter></Provider>)
-
-    const eachMovieDiv = await screen.findByTestId("movie-item-676705")
-    expect(eachMovieDiv).toBeInTheDocument()
-  })
-
   it("should render 20 movies", async () => {
     render(<Provider store={store}><BrowserRouter><Movies /></BrowserRouter></Provider>)
 
